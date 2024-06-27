@@ -1,0 +1,17 @@
+server:
+  port: 7010
+  address: 0.0.0.0
+  servlet:
+    context-path: /api/v1/siafms
+spring:
+  application:
+    name: ms-siafms
+  profiles:
+    active: prod
+  banner:
+    location: banner/banner.txt
+siafms:
+  service:
+    url: http://172.16.4.253:59999
+    ejecutora: 300684
+    anio: 2024
