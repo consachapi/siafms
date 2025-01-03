@@ -12,6 +12,6 @@ spring:
     location: banner/banner.txt
 siafms:
   service:
-    url: http://172.16.4.253:59999
-    ejecutora: 300684
-    anio: 2024
+    url: ${SIAFMS_URL:http://172.16.4.253:59999}
+    ejecutora: ${SIAFMS_EJECUTORA:300684}
+    anio: ${SIAFMS_ANIO:2025}

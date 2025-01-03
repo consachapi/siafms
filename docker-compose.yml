@@ -1,0 +1,16 @@
+services:
+  api-siafms:
+    image: siafms:1.2.0
+    container_name: api-siafms
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7010:7010"
+    volumes:
+      - /opt/siafms/logs:/logs
+    environment:
+      SIAFMS_URL: http://172.16.4.253:59999
+      SIAFMS_EJECUTORA: 300684
+      SIAFMS_ANIO: 2025
+    restart: unless-stopped
