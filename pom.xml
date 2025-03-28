@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>pe.gob.cusco</groupId>
 	<artifactId>siafms</artifactId>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 	<name>siafms</name>
 	<description>Cliente del Interfaz de SIAF</description>
 	<url/>
