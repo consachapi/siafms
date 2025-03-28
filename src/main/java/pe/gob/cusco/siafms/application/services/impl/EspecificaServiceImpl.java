@@ -21,8 +21,11 @@ public class EspecificaServiceImpl implements EspecificaService {
 
     private static final Logger LOG = LoggerFactory.getLogger(EspecificaServiceImpl.class);
 
-    @Autowired private ConfigSiafms configSiafms;
-    @Autowired private FeignServiceController feignServiceController;
+    private final FeignServiceController feignServiceController;
+
+    public EspecificaServiceImpl(FeignServiceController feignServiceController) {
+        this.feignServiceController = feignServiceController;
+    }
 
     @Override
     public EspecificaEjecucionTpl getAllByMeta(Integer anio, Integer meta) {

@@ -25,15 +25,15 @@ public class GlobalExceptionHandler {
         if (e.status() == 500) {
             message.setStatus(404);
             message.setError(e.getCause().getMessage());
-            return new ResponseEntity(message, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
         } else if (e.status() == 401) {
             message.setError("No autorizado.");
-            return new ResponseEntity(message, HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(message, HttpStatus.UNAUTHORIZED);
         } else if (e.status() == 403) {
             message.setError("No tiene permisos para obtener recursos.");
-            return new ResponseEntity(message, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>(message, HttpStatus.FORBIDDEN);
         } else {
-            return new ResponseEntity(message, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
         }
     }
 

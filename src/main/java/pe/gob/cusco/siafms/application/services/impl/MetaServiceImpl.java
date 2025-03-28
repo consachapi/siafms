@@ -17,10 +17,13 @@ import pe.gob.cusco.siafms.core.config.ConfigSiafms;
 public class MetaServiceImpl implements MetaService {
     private static final Logger LOG = LoggerFactory.getLogger(MetaServiceImpl.class);
 
-    @Autowired
-    private ConfigSiafms configSiafms;
+    private final ConfigSiafms configSiafms;
+    private final FeignServiceController feignServiceController;
 
-    @Autowired private FeignServiceController feignServiceController;
+    public MetaServiceImpl(ConfigSiafms configSiafms, FeignServiceController feignServiceController) {
+        this.configSiafms = configSiafms;
+        this.feignServiceController = feignServiceController;
+    }
 
     @Override
     public MetaAllTpl listarMetas(Integer anio) {

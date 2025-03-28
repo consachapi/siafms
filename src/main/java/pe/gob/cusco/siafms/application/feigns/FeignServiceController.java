@@ -17,13 +17,13 @@ public class FeignServiceController {
     private final Encoder encoder;
     private final Contract contract;
 
-    @Autowired
-    private ConfigSiafms configSiafms;
+    private final ConfigSiafms configSiafms;
 
-    public FeignServiceController(Decoder decoder, Encoder encoder, Contract contract) {
+    public FeignServiceController(Decoder decoder, Encoder encoder, Contract contract, ConfigSiafms configSiafms) {
         this.decoder = decoder;
         this.encoder = encoder;
         this.contract = contract;
+        this.configSiafms = configSiafms;
     }
 
     public <T> T creating( Class<T> apiType) {

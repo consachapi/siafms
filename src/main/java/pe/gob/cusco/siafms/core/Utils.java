@@ -33,8 +33,6 @@ public class Utils {
         } else {
             especificaDetalle = clasificador.charAt(8) + Character.toString(clasificador.charAt(9));
         }
-
-        String resultClasficador = tipoTransaccion + "." + generica + "." + subGenerica + "." + subGenericaDetalle + "." + especifica + "." + especificaDetalle;
-        return resultClasficador;
+        return tipoTransaccion + "." + generica + "." + subGenerica + "." + subGenericaDetalle + "." + especifica + "." + especificaDetalle;
     }
 }

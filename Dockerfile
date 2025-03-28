@@ -1,6 +1,6 @@
-FROM openjdk:17-alpine
-RUN mkdir /logs
+FROM eclipse-temurin:21-jdk-alpine
 RUN apk add --no-cache fontconfig ttf-dejavu
-ENV TZ America/Lima
-ADD siafms-1.2.0.jar //
-ENTRYPOINT ["java", "-jar", "/siafms-1.2.0.jar"]
+ENV TZ=America/Lima
+RUN apk update && apk add --no-cache tzdata
+COPY siafms-1.2.1.jar /app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]

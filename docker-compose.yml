@@ -1,12 +1,12 @@
 services:
   api-siafms:
-    image: siafms:1.2.0
+    image: consachapi/siafms:1.2.1
     container_name: api-siafms
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "7010:7010"
+      - "30000:30000"
     volumes:
       - /opt/siafms/logs:/logs
     environment:

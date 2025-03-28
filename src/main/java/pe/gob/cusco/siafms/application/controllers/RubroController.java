@@ -1,6 +1,5 @@
 package pe.gob.cusco.siafms.application.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +13,11 @@ public class RubroController {
     public static final String RUBROS = "/rubros";
     private static final String POR_META = "";
 
-    @Autowired private RubroService rubroPorMeta;
+    private final RubroService rubroPorMeta;
+
+    public RubroController(RubroService rubroPorMeta) {
+        this.rubroPorMeta = rubroPorMeta;
+    }
 
     @GetMapping(POR_META)
     @ResponseStatus(HttpStatus.OK)

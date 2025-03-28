@@ -1,12 +1,9 @@
 package pe.gob.cusco.siafms.application.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.gob.cusco.siafms.application.models.tpl.MetaAllTpl;
-import pe.gob.cusco.siafms.application.models.tpl.MetaTpl;
-import pe.gob.cusco.siafms.application.models.tpl.RubroTpl;
 import pe.gob.cusco.siafms.application.services.MetaService;
 
 @CrossOrigin()
@@ -18,8 +15,11 @@ public class MetaController {
     private static final String BUSCAR = "/buscar/{anio}/{numero}";
     private static final String RUBRO_POR_META = "/ff_rubro/{meta}/{anio}";
 
-    @Autowired
-    private MetaService metaService;
+    private final MetaService metaService;
+
+    public MetaController(MetaService metaService) {
+        this.metaService = metaService;
+    }
 
     @GetMapping(LISTAR_POR_ANIO)
     @ResponseStatus(HttpStatus.OK)

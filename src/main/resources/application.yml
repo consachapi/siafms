@@ -1,5 +1,5 @@
 server:
-  port: 7010
+  port: 30000
   address: 0.0.0.0
   servlet:
     context-path: /api/v1/siafms
@@ -12,6 +12,6 @@ spring:
     location: banner/banner.txt
 siafms:
   service:
-    url: ${SIAFMS_URL:http://172.16.4.253:59999}
-    ejecutora: ${SIAFMS_EJECUTORA:300684}
-    anio: ${SIAFMS_ANIO:2025}
+    url: ${SIAFMS_URL}
+    ejecutora: ${SIAFMS_EJECUTORA}
+    anio: ${SIAFMS_ANIO}
